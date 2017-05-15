@@ -2083,7 +2083,7 @@ event-emitter@~0.3.5:
     d "1"
     es5-ext "~0.10.14"
 
-eventemitter3@1.x.x:
+eventemitter3@1.x.x, eventemitter3@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
 
@@ -3468,6 +3468,10 @@ lodash.uniq@^4.5.0:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
+lodash@^3.10.1:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+
 longest@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
@@ -3654,6 +3658,14 @@ ncname@1.0.x:
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
+
+niojs@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/niojs/-/niojs-1.1.5.tgz#d29f5d4476519a8ad7b8b1ed50b289f5a198b2bb"
+  dependencies:
+    eventemitter3 "^1.1.1"
+    inherits "^2.0.1"
+    lodash "^3.10.1"
 
 no-case@^2.2.0:
   version "2.3.1"
