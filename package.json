@@ -1,0 +1,25 @@
+{
+  "name": "nio-demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.0.3",
+    "tachyons": "^4.7.2"
+  },
+  "devDependencies": {
+    "react-scripts": "0.9.5",
+    "standard": "^10.0.2"
+  },
+  "scripts": {
+    "start": "NODE_PATH=src/ react-scripts start",
+    "build": "NODE_PATH=src/ react-scripts build",
+    "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
+    "lint": "standard ./src/*.js || true",
+    "lint-fix": "standard ./src/*.js --fix || true"
+  }
+}
