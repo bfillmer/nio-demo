@@ -15,6 +15,8 @@ export const store = createStore(
 
 // Attach our data stream to our store so we can actively retrieve data.
 // @TODO Still a little on the fence about the organization here, works for now.
+// @TODO As this has grown would ideally like to fire off more than one dispatch
+// to the store here on any given update, updating items, purchases, etc.
 nio.source
   .socketio('//eval.socket.nio.works', ['groceries'])
   .pipe(nio.func(purchase => store.dispatch(actions.storePurchase(purchase))))
