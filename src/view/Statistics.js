@@ -21,6 +21,7 @@ const mapStateToProps = state => ({
   total: state.purchases.length
 })
 
+// @TODO Make the actual statistics more visually appealing.
 const Container = ({average, gender, total}) => (
   <div className='flex justify-between mb5 mh5 pa3 bn br3 bg-moon-gray'>
     <Column>

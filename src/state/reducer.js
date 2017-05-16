@@ -15,11 +15,19 @@ export const actions = {
 
 // REDUCERS
 const initialState = {
-  purchases: []
+  purchases: [],
+  quantities: {}
 }
+
+// @HACK Non-normalized return data, build out a map based on item name and update the
+// quantity number.
+const getQuantities = (quantities, cart) => cart.reduce((q, item) => assign({}, q, {
+  [item.name]: q[item.name] ? item.quantity + q[item.name] : item.quantity
+}), quantities)
 
 export const reducer = handleActions({
   [types.STORED_PURCHASE]: (state, action) => assign({}, state, {
-    purchases: [...state.purchases, action.payload]
+    purchases: [...state.purchases, action.payload],
+    quantities: getQuantities(state.quantities, action.payload.cart)
   })
 }, initialState)

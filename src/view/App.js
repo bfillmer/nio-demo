@@ -2,24 +2,20 @@
 import React from 'react'
 
 import {Statistics} from 'view/Statistics'
-import {LatestPurchase} from 'view/LatestPurchase'
-import {H2, Icon} from 'view/Atoms'
+import {Icon} from 'view/Atoms'
+
+const H1 = ({children}) => (<h1 className='mv5 f2 fw4 lh-copy tc'>{children}</h1>)
 
 const PopularItems = () => (
-  <H2>Popular Items</H2>
+  <div className='ph5'>
+  </div>
 )
 
 export const App = ({purchases}) => (
   <div className='w-100'>
-    <h1 className='mv5 f2 fw4 lh-copy tc'><Icon className='fa-shopping-cart' /> Checkout Activity</h1>
+    <H1><Icon className='fa-shopping-cart' /> Checkout Activity</H1>
     <Statistics />
-    <div className='flex'>
-      <div className='w-50 ph5'>
-        <LatestPurchase />
-      </div>
-      <div className='w-50 ph5'>
-        <PopularItems />
-      </div>
-    </div>
+    <H1><Icon className='fa-star' /> Popular Items</H1>
+    <PopularItems />
   </div>
 )
