@@ -1,7 +1,7 @@
 
 import {createAction, handleActions} from 'redux-actions'
 
-const assign = Object.assign
+export const assign = Object.assign
 
 // TYPES
 export const types = {
