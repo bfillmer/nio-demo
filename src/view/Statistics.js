@@ -5,7 +5,8 @@ import numeral from 'numeral'
 
 import {H2, Icon} from 'view/Atoms'
 
-const Column = ({children}) => (<H2 className='ma0 center'>{children}</H2>)
+const Column = ({children}) => (<H2 className='ma0 center v-mid'>{children}</H2>)
+const Stat = ({children}) => (<em className='fa-lg fs-normal'>{children}</em>)
 
 const getFemale = purchase => purchase.shopper.gender === 'female'
 const getMale = purchase => purchase.shopper.gender === 'male'
@@ -15,23 +16,25 @@ const mapStateToProps = state => ({
     state.purchases.reduce((total, purchase) => (total + purchase.amount), 0) / state.purchases.length
   ).format('$0,0.00'),
   gender: ({
-    female: numeral(state.purchases.filter(getFemale).length / state.purchases.length * 100).format('0,0'),
-    male: numeral(state.purchases.filter(getMale).length / state.purchases.length * 100).format('0,0')
+    female: numeral(state.purchases.filter(getFemale).length / state.purchases.length).format('0%'),
+    male: numeral(state.purchases.filter(getMale).length / state.purchases.length).format('0%')
   }),
   total: state.purchases.length
 })
 
-// @TODO Make the actual statistics more visually appealing.
 const Container = ({average, gender, total}) => (
-  <div className='flex justify-between mb5 mh5 pa3 bn br3 bg-moon-gray'>
+  <div className='flex items-center justify-between mb5 mh5 pv4 ph3 bn br3 bg-moon-gray'>
     <Column>
-      <Icon className='fa-usd fa-lg' /> Average Purchase Value {average}
+      <Icon className='fa-usd fa-lg' /> Average Purchase Value <Stat>{average}</Stat>
     </Column>
     <Column>
-      <Icon className='fa-plus-square fa-lg' /> Total Purchases Today {total}
+      <Icon className='fa-plus-square fa-lg' /> Total Purchases Today <Stat>{total}</Stat>
     </Column>
     <Column>
-      <Icon className='fa-venus-mars fa-lg' /> Male/Female Shoppers {gender.male}/{gender.female}
+      <Icon className='fa-mars fa-lg' /> Male <Stat>{gender.male}</Stat>
+    </Column>
+    <Column>
+      <Icon className='fa-venus fa-lg' /> Female <Stat>{gender.female}</Stat>
     </Column>
   </div>
 )

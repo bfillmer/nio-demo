@@ -20,7 +20,8 @@ const initialState = {
 }
 
 // @HACK Non-normalized return data, build out a map based on item name and update the
-// quantity number.
+// quantity number. Would prefer an array structure, but don't want to deal with finding
+// and updating existing item quantities in a list.
 const getQuantities = (quantities, cart) => cart.reduce((q, item) => assign({}, q, {
   [item.name]: q[item.name] ? item.quantity + q[item.name] : item.quantity
 }), quantities)
