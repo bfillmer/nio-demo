@@ -4,10 +4,12 @@ import {connect} from 'react-redux'
 import {presets, spring, TransitionMotion} from 'react-motion'
 
 const ListItem = ({item, style}) => (
-  <h3 className='f3 tc w-20' style={style}>
-    <small className='fw3 db'>{item.name}</small>
-    {item.quantity}
-  </h3>
+  <div className='w-10' style={style}>
+    <h3 className='mt0 mb3 mh2 pv3 f3 tc near-white bg-white-30 bn br3'>
+      <small className='fw3 db'>{item.name}</small>
+      {item.quantity}
+    </h3>
+  </div>
 )
 
 // ANIMATION HELPERS

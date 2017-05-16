@@ -2,11 +2,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import numeral from 'numeral'
+import classNames from 'classnames'
 
 import {H2, Icon} from 'view/Atoms'
 
-const Column = ({children}) => (<H2 className='ma0 center v-mid'>{children}</H2>)
-const Stat = ({children}) => (<em className='fa-lg fs-normal'>{children}</em>)
+const Column = ({children}) => (<H2 className='ma0 center v-mid independence'>{children}</H2>)
+const Stat = ({children}) => (<em className='fa-lg fs-normal gunmetal'>{children}</em>)
+const StatIcon = ({className}) => (<Icon className={classNames('fa-lg black-50', className)} />)
 
 const getFemale = purchase => purchase.shopper.gender === 'female'
 const getMale = purchase => purchase.shopper.gender === 'male'
@@ -23,18 +25,18 @@ const mapStateToProps = state => ({
 })
 
 const Container = ({average, gender, total}) => (
-  <div className='flex items-center justify-between mb5 mh5 pv4 ph3 bn br3 bg-moon-gray'>
+  <div className='flex items-center justify-between mb5 mh5 pv4 ph3 bn br3 bg-eggshell'>
     <Column>
-      <Icon className='fa-usd fa-lg' /> Average Purchase Value <Stat>{average}</Stat>
+      <StatIcon className='fa-usd' /> Average Purchase Value <Stat>{average}</Stat>
     </Column>
     <Column>
-      <Icon className='fa-plus-square fa-lg' /> Total Purchases Today <Stat>{total}</Stat>
+      <StatIcon className='fa-plus-square' /> Total Purchases Today <Stat>{total}</Stat>
     </Column>
     <Column>
-      <Icon className='fa-mars fa-lg' /> Male <Stat>{gender.male}</Stat>
+      <StatIcon className='fa-mars' /> Male <Stat>{gender.male}</Stat>
     </Column>
     <Column>
-      <Icon className='fa-venus fa-lg' /> Female <Stat>{gender.female}</Stat>
+      <StatIcon className='fa-venus' /> Female <Stat>{gender.female}</Stat>
     </Column>
   </div>
 )

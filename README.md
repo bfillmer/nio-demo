@@ -17,3 +17,4 @@ yarn test # Run jest tests
 * Data is definitely not normalized, nor any ids to work with, which would help simplify our stat calculations and such. Generally would optimize things.
 * Lack of cached data or an initial dataset makes the start-up of the app look a little odd. Looks better as more data gets into the system.
 * Array work on the stream data with the awkward data structures made doing a simple sorted list of popular items unfeasible without throttling the data. Settled on a tag map type concept instead.
+* Haven't really tested the responsiveness of this thing, no time.

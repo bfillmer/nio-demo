@@ -5,7 +5,7 @@ import {Statistics} from 'view/Statistics'
 import {PopularItems} from 'view/PopularItems'
 import {Icon} from 'view/Atoms'
 
-const H1 = ({children}) => (<h1 className='mv5 f2 fw4 lh-copy tc'>{children}</h1>)
+const H1 = ({children}) => (<h1 className='mv5 f2 fw5 lh-copy tc light-green text-shadow'>{children}</h1>)
 
 export const App = ({purchases}) => (
   <div className='w-100'>

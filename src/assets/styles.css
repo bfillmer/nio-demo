@@ -1,0 +1,25 @@
+
+.bg-storefront {
+  background-image: url('storefront.jpg')
+}
+
+.zero-zero {
+  top: 0;
+  left: 0;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px rgba(0, 0, 0, .7);
+}
+
+.independence {
+  color: #505168;
+}
+
+.gunmetal {
+  color: #27233a;
+}
+
+.bg-eggshell {
+  background-color: #eaefd3;
+}

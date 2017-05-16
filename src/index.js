@@ -4,6 +4,7 @@ import {Provider} from 'react-redux'
 
 import 'tachyons'
 import 'font-awesome/css/font-awesome.css'
+import 'assets/styles.css'
 
 import {App} from 'view/App'
 
